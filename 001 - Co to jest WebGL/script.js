@@ -9,17 +9,8 @@ class app {
         this.scene.add(this.cube);
         this.camera = new PerspectiveCamera();
         this.camera.position.set(0, 0, 3);
-
         this.renderer = new WebGLRenderer({antialias: true});
-        this.domElement = document.createElement('div');
-        this.domElement.classList.add("webglWrapper")
-        this.domElement.appendChild(this.renderer.domElement);
-        this.adaptSize();
-        if ("ResizeObserver" in window) {
-            this.resizeObserver = new ResizeObserver(this.adaptSize.bind(this))
-            this.resizeObserver.observe(this.domElement);
-        }
-        addEventListener('resize', this.adaptSize.bind(this))
+        this.renderer.setSize(640, 480);
         this.lastRender = new Date();
         this.render();
     }
@@ -37,11 +28,8 @@ class app {
         requestAnimationFrame(this.render.bind(this));
     }
 
-    adaptSize() {
-        this.renderer.setSize(this.domElement.clientWidth, this.domElement.clientHeight);
-        this.renderer.setPixelRatio(devicePixelRatio);
-        this.camera.aspect = this.domElement.clientWidth / this.domElement.clientHeight;
-        this.camera.updateProjectionMatrix();
+    get domElement() {
+        return this.renderer.domElement;
     }
 }
 
