@@ -1,0 +1,27 @@
+{
+  "name": "kurs-webgl-001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --entry .\\script.js --output .\\compiled.js\n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matrix0123456789/Kurs-Webgl.git"
+  },
+  "author": "Mateusz Krawczyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matrix0123456789/Kurs-Webgl/issues"
+  },
+  "homepage": "https://github.com/matrix0123456789/Kurs-Webgl#readme",
+  "dependencies": {
+    "three": "^0.120.0",
+    "webpack": "^4.44.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

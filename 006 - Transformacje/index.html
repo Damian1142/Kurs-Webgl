@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .webglWrapper canvas {
+            display: block;
+        }
+
+        .webglWrapper {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .controls {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            color: #ffffff
+
+        }
+
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<script src="compiled.js"></script>
+<div class="controls">
+    <label data-name="positionX">
+        <span class="title">Position X</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+    <label data-name="positionY">
+        <span class="title">Position Y</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+    <label data-name="positionZ">
+        <span class="title">Position Z</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+
+
+    <label data-name="scaleX">
+        <span class="title">Scale X</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="scaleY">
+        <span class="title">Scale Y</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="scaleZ">
+        <span class="title">Scale Z</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+
+
+    <label data-name="rotationX">
+        <span class="title">Rotation X</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+    <label data-name="rotationY">
+        <span class="title">Rotation Y</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+    <label data-name="rotationZ">
+        <span class="title">Rotation Z</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+</div>
+</body>
+</html>
