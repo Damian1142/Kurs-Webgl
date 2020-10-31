@@ -1,6 +1,2 @@
-001 - Co to jest WebGL/node_modules/
-001 - Co to jest WebGL/.idea/
-004 - Rozdzielczość/node_modules/
-004 - Rozdzielczość/.idea/
-006 - Transformacje/node_modules/
-006 - Transformacje/.idea/
+.idea/
+node_modules/

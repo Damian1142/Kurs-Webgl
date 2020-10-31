@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .webglWrapper canvas {
+            display: block;
+        }
+
+        .webglWrapper {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .controls {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            color: #ffffff
+
+        }
+
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<script src="compiled.js"></script>
+<div class="controls">
+    <label data-name="position1">
+        <span class="title">Position X 1</span>
+        <input type="range" min="-2" max="2" step="any" value="-1">
+    </label>
+    <label data-name="scale1">
+        <span class="title">Scale 1</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="rotation1">
+        <span class="title">Rotation X 1</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+    <br>
+
+    <label data-name="position2">
+        <span class="title">Position X 2</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="scale2">
+        <span class="title">Scale 2</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="rotation2">
+        <span class="title">Rotation X 2</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+<br>
+    <label data-name="position3">
+        <span class="title">Position X 3</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="scale3">
+        <span class="title">Scale 3</span>
+        <input type="range" min="-2" max="2" step="any" value="1">
+    </label>
+    <label data-name="rotation3">
+        <span class="title">Rotation X 3</span>
+        <input type="range" min="-2" max="2" step="any">
+    </label>
+
+</div>
+</body>
+</html>
