@@ -1,12 +1,13 @@
 import {
+    AmbientLight,
     BoxGeometry,
-    Color,
     Mesh,
     MeshPhysicalMaterial,
     PerspectiveCamera,
     PointLight,
     Scene,
     SphereGeometry,
+    TextureLoader,
     WebGLRenderer
 } from "three";
 
@@ -14,11 +15,18 @@ class app {
     constructor() {
         this.scene = new Scene();
 
+        this.light = new PointLight();
+        this.light.position.set(0, 3, 3)
+        this.scene.add(this.light)
+        this.light2 = new AmbientLight();
+        this.light2.intensity = 0.2
+        this.scene.add(this.light2)
+
         const material = new MeshPhysicalMaterial();
-        material.color = new Color(1, 0.2, 0.2);
-        material.emissive = new Color(0.2, 0.2, 1);
-        //material.roughness = 0.5;
-       // material.metalness = 1;
+        this.loadTexture('https://picsum.photos/1024/1024').then(t => {
+            material.map = t;
+            material.needsUpdate = true;
+        });
 
         const cubeGeometry = new BoxGeometry();
         this.cube = new Mesh(cubeGeometry, material)
@@ -28,9 +36,6 @@ class app {
         this.sphere = new Mesh(sphereGeometry, material)
         this.sphere.position.x = 1.2
         this.scene.add(this.sphere);
-        this.light = new PointLight();
-        this.light.position.set(0, 3, 3)
-        this.scene.add(this.light)
 
         this.camera = new PerspectiveCamera();
         this.camera.position.set(0, 0, 3);
@@ -71,6 +76,14 @@ class app {
         this.camera.aspect = this.domElement.clientWidth / this.domElement.clientHeight;
         this.camera.updateProjectionMatrix();
     }
+
+    loadTexture(url) {
+        return new Promise((resolve, reject) => {
+            const loader = new TextureLoader();
+            loader.load(url, resolve, undefined, reject);
+        });
+    }
+
 }
 
 document.body.append((new app()).domElement);
