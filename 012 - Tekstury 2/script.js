@@ -32,7 +32,7 @@ class app {
             material3.map = t;
             material3.needsUpdate = true;
         });
-        this.loadTexture('https://rawcdn.githack.com/matrix0123456789/Kurs-Webgl/4e7c0bab3d803bee501ae3a7778e2e2bc4b826b0/012%20-%20Tekstury%202/earthspec1k.jpg?raw=true').then(t => {
+        this.loadTexture('https://rawcdn.githack.com/matrix0123456789/Kurs-Webgl/beec99b7badacb719281dcdfe7ed1b64f4b7b49f/012%20-%20Tekstury%202/earthspec1k.jpg?raw=true').then(t => {
             material2.roughness=1
             material2.roughnessMap = t;
             material2.needsUpdate = true;
