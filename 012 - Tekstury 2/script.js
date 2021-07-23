@@ -26,13 +26,21 @@ class app {
         const material1 = new MeshPhysicalMaterial();
         const material2 = new MeshPhysicalMaterial();
         const material3 = new MeshPhysicalMaterial();
-        this.loadTexture('http://planetpixelemporium.com/images/mappreviews/earthmapthumb.jpg').then(t => {
+        this.loadTexture('https://rawcdn.githack.com/matrix0123456789/Kurs-Webgl/4e7c0bab3d803bee501ae3a7778e2e2bc4b826b0/012%20-%20Tekstury%202/earthmap1k.jpg?raw=true').then(t => {
             material1.map = t;
             material1.needsUpdate = true;
+            material3.map = t;
+            material3.needsUpdate = true;
         });
-        this.loadTexture('http://planetpixelemporium.com/images/mappreviews/earthspecthumb.jpg').then(t => {
-            material2.map = t;
+        this.loadTexture('https://rawcdn.githack.com/matrix0123456789/Kurs-Webgl/4e7c0bab3d803bee501ae3a7778e2e2bc4b826b0/012%20-%20Tekstury%202/earthspec1k.jpg?raw=true').then(t => {
+            material2.roughness=1
+            material2.roughnessMap = t;
             material2.needsUpdate = true;
+            material2.metalness=.2
+            material3.roughness=1
+            material3.roughnessMap = t;
+            material3.needsUpdate = true;
+            material3.metalness=.5
         });
 
 
